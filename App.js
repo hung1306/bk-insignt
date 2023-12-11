@@ -10,14 +10,15 @@ import { QrCodeScreen } from './src/screens/QrCodeScreen/QrCodeScreen';
 import { SearchScreen } from './src/screens/SearchScreen/SearchScreen';
 import { SignUpScreen } from './src/screens/SignUpScreen/SignUpScreem';
 import { WellcomeScreen } from './src/screens/WellcomeScreen/WellcomeScreen';
+
 const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Wellcome">
+        <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Calendar" component={CalendarScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Map" component={LoginScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="QrCode" component={QrCodeScreen} />
