@@ -23,6 +23,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    fontFamily: 'OpenSans-SemiBoldItalic',
     flex: 1,
     backgroundColor: '#fafafa',
     alignItems: 'center',
