@@ -1,8 +1,8 @@
 import { Text, View } from "react-native"
-export const HomeScreen = () => {
+export const QrCodeScreen = () => {
     return (
         <View>
-            <Text>Home Page</Text>
+            <Text>QrCodeScreen</Text>
         </View>
     )
 }
