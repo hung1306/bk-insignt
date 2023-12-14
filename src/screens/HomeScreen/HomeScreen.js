@@ -105,31 +105,31 @@ export const HomeScreen = () => {
         </View>
       </View> 
       <View style={styles.container}>
-      <Pressable onPress={() => navigation.navigate('Home')}>
-        <Image
-          source={require("../../../assets/Home/vector1.png")}
-          style={styles.icon}
-        />
-      </Pressable>
-      <Pressable onPress={() => {}}>
-        <Image
-            source={require("../../../assets/Home/vector2.png")}
-          style={styles.icon}
-        />
-      </Pressable>
-      <Pressable onPress={() => {}}>
-        <Image
-            source={require("../../../assets/Home/vector3.png")}
-          style={styles.icon}
-        />
-      </Pressable>
-      <Pressable  onPress={() => navigation.navigate('Profile')}>
-        <Image
-            source={require("../../../assets/Home/union1.png")}
-          style={styles.icon}
-        />
-      </Pressable>
-    </View>
+                <Pressable onPress={() => navigation.navigate('Home')}>
+                    <Image
+                        source={require("../../../assets/Home/vector1.png")}
+                        style={styles.iconno1}
+                    />
+                </Pressable>
+                <Pressable onPress={() => { }}>
+                    <Image
+                        source={require("../../../assets/Home/vector2.png")}
+                        style={styles.iconno2}
+                    />
+                </Pressable>
+                <Pressable onPress={() => { }}>
+                    <Image
+                        source={require("../../../assets/Home/vector3.png")}
+                        style={styles.iconno3}
+                    />
+                </Pressable>
+                <Pressable onPress={() => navigation.navigate('Profile')}>
+                    <Image
+                        source={require("../../../assets/Home/union1.png")}
+                        style={styles.iconno3}
+                    />
+                </Pressable>
+            </View>
     </View>
   );
 };
@@ -406,4 +406,16 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
   },
+  iconno1: {
+    width: 34,
+    height: 24,
+},
+  iconno2: {
+    width: 27,
+    height: 30,
+},
+  iconno3: {
+    width: 27,
+    height: 29,
+},  
 });
