@@ -110,12 +110,12 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         backgroundColor: '#fff',
         paddingHorizontal: 15,
-        borderRadius: 40,
+        borderRadius: 30,
         width: "90%",
     },
     settingsList: {
         marginTop: 15,
-        marginBottom: 20,
+        marginBottom: 15,
     },
     settingItem: {
         flexDirection: 'row',
@@ -136,14 +136,14 @@ const styles = StyleSheet.create({
         marginTop: 5,
     },
     settingText1: {
-        fontSize: 20,
+        fontSize: 18,
         color: "#C3C3C3",
     },
     settingText2: {
         fontSize: 18,
     },
     text2Con:{
-        width: 220,
+        width: 230,
     },
     buttonContainer:{
         alignSelf:"center",

@@ -38,6 +38,9 @@ export const ChangeInfoScreen = () => {
                 />
             </View>
             <View style={styles.container}>
+            <View style={styles.changeTitle}>
+                <Text style={styles.textTitle} >Thay đổi thông tin cá nhân</Text>
+                </View>
                 <View style={styles.inputContainer}>
                     <Text style={styles.title}>Tên</Text>
                     <TextInput
@@ -166,4 +169,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
     },
+    changeTitle:{
+        alignItems:"center",
+        marginBottom: 10,
+    },
+    textTitle:{
+        fontSize: 20,
+        fontWeight: 'bold',
+    }
 });        

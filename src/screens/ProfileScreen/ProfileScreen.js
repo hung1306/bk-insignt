@@ -38,7 +38,7 @@ export const ProfileScreen = () => {
                         </View>
                     </Pressable>
                     <View style={styles.separator} />
-                    <Pressable style={[]} onPress={() => { }}>
+                    <Pressable style={[]} onPress={() => navigation.navigate('ChangePass')}>
                         <View style={styles.settingItem}>
                             <Image
                                 resizeMode="cover"
