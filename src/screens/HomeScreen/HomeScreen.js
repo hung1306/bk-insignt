@@ -1,6 +1,8 @@
 import { StyleSheet, View, Text, Image, Pressable, Dimensions } from "react-native";
 import { fontFamily, Color, FontSize, Border, Padding } from "../../../GlobalStyles";
+import { useNavigation } from '@react-navigation/native';
 export const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={[styles.homepage]}>
       <View style={[styles.vectorParent, styles.vectorParentShadowBox]}>
@@ -103,7 +105,7 @@ export const HomeScreen = () => {
         </View>
       </View> 
       <View style={styles.container}>
-      <Pressable onPress={() => {}}>
+      <Pressable onPress={() => navigation.navigate('Home')}>
         <Image
           source={require("../../../assets/Home/vector1.png")}
           style={styles.icon}
@@ -121,7 +123,7 @@ export const HomeScreen = () => {
           style={styles.icon}
         />
       </Pressable>
-      <Pressable  onPress={() => {}}>
+      <Pressable  onPress={() => navigation.navigate('Profile')}>
         <Image
             source={require("../../../assets/Home/union1.png")}
           style={styles.icon}
