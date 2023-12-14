@@ -1,8 +1,13 @@
 import { StyleSheet, View, Text, Image, Pressable, ScrollView } from "react-native";
-import { fontFamily, Color, FontSize, Border, Padding } from "../../../GlobalStyles";
 import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
 export const ProfileScreen = () => {
     const navigation = useNavigation();
+    const [isToggled, setIsToggled] = useState(false);
+
+    const handleToggle = () => {
+      setIsToggled(!isToggled);
+    };
     return (
         <View style={[styles.profilepage]}>
             <View style={[styles.profile]}>
@@ -17,7 +22,7 @@ export const ProfileScreen = () => {
             </View>
             <View style={styles.settingsContainer}>
                 <ScrollView contentContainerStyle={styles.settingsList}>
-                    <Pressable style={[]} onPress={() => { }}>
+                    <Pressable style={[]} onPress={() => navigation.navigate('Info')}>
                         <View style={styles.settingItem}>
                             <Image
                                 resizeMode="cover"
@@ -33,7 +38,7 @@ export const ProfileScreen = () => {
                         </View>
                     </Pressable>
                     <View style={styles.separator} />
-                    <Pressable style={[]} onPress={() => { }}>
+                    <Pressable style={[]} onPress={() => navigation.navigate('ChangePass')}>
                         <View style={styles.settingItem}>
                             <Image
                                 resizeMode="cover"
@@ -57,11 +62,13 @@ export const ProfileScreen = () => {
                                 style={styles.settingIcon}
                             />
                             <Text style={styles.settingText}>Thông báo</Text>
+                            <Pressable style={[]} onPress={handleToggle}>
                             <Image
                                 resizeMode="cover"
-                                source={require('../../../assets/Profile1/vector.png')} // Replace with the path or URL of your setting icon
-                                style={styles.settingIcon2}
+                                source={isToggled ? require('../../../assets/Profile1/Group45.png') : require('../../../assets/Profile1/Group46.png')} // Replace with the path or URL of your setting icon
+                                style={styles.settingToggle}
                             />
+                            </Pressable>
                         </View>
                     </Pressable>
                     <View style={styles.separator} />
@@ -119,25 +126,25 @@ export const ProfileScreen = () => {
                 <Pressable onPress={() => navigation.navigate('Home')}>
                     <Image
                         source={require("../../../assets/Home/vector1.png")}
-                        style={styles.icon}
+                        style={styles.icon1}
                     />
                 </Pressable>
                 <Pressable onPress={() => { }}>
                     <Image
                         source={require("../../../assets/Home/vector2.png")}
-                        style={styles.icon}
+                        style={styles.icon2}
                     />
                 </Pressable>
                 <Pressable onPress={() => { }}>
                     <Image
                         source={require("../../../assets/Home/vector3.png")}
-                        style={styles.icon}
+                        style={styles.icon3}
                     />
                 </Pressable>
                 <Pressable onPress={() => navigation.navigate('Profile')}>
                     <Image
                         source={require("../../../assets/Home/union1.png")}
-                        style={styles.icon}
+                        style={styles.icon3}
                     />
                 </Pressable>
             </View>
@@ -153,7 +160,7 @@ const styles = StyleSheet.create({
     },
     container: {
         position: 'absolute',
-        bottom: 5,
+        bottom: 10,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
@@ -163,9 +170,17 @@ const styles = StyleSheet.create({
         width: '100%',
         borderRadius: 20,
     },
-    icon: {
-        width: 30,
+    icon1: {
+        width: 34,
+        height: 24,
+    },
+    icon2: {
+        width: 27,
         height: 30,
+    },
+    icon3: {
+        width: 27,
+        height: 29,
     },
     profile: {
         alignItems: 'center',
@@ -219,5 +234,9 @@ const styles = StyleSheet.create({
     settingText: {
         flex: 1,
         fontSize: 20,
+    },
+    settingToggle :{
+        height: 30,
+        marginTop: 5,
     },
 });        
