@@ -9,6 +9,7 @@ import { ProfileScreen } from './src/screens/ProfileScreen/ProfileScreen';
 import { ChangeInfoScreen } from './src/screens/ProfileScreen/ChangeInfo';
 import { InfoScreen } from './src/screens/ProfileScreen/Info';
 import { ChangePassScreen } from './src/screens/ProfileScreen/ChangePass';
+import { ChangeAvatarScreen } from './src/screens/ProfileScreen/ChangeAvatar';
 import { QrCodeScreen } from './src/screens/QrCodeScreen/QrCodeScreen';
 import { SearchScreen } from './src/screens/SearchScreen/SearchScreen';
 import { SignUpScreen } from './src/screens/SignUpScreen/SignUpScreem';
@@ -27,6 +28,7 @@ export default function App() {
         <Stack.Screen name="ChangeInfo" component={ChangeInfoScreen} />
         <Stack.Screen name="Info" component={InfoScreen} />
         <Stack.Screen name="ChangePass" component={ChangePassScreen} />
+        <Stack.Screen name="ChangeAvatar" component={ChangeAvatarScreen} />
         <Stack.Screen name="QrCode" component={QrCodeScreen} />
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
