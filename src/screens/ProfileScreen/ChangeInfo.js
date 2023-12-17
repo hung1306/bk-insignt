@@ -31,11 +31,20 @@ export const ChangeInfoScreen = () => {
                 </View>
             </View>
             <View style={[styles.profile]}>
+                <Pressable onPress={() => navigation.navigate('ChangeAvatar')}>
+                <View style={[styles.profileCirlce]}>
                 <Image
                     style={[styles.profileImage]}
                     resizeMode="cover"
                     source={require("../../../assets/Profile1/avatar.png")}
                 />
+                <Image
+                    style={[styles.BottomLeftImage]}
+                    resizeMode="cover"
+                    source={require("../../../assets/Profile1/Camera.png")}
+                />
+                </View>
+                </Pressable>
             </View>
             <View style={styles.container}>
             <View style={styles.changeTitle}>
@@ -108,12 +117,21 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    profileCirlce:{
+        borderRadius: 50,
+        marginTop: 5,
+    }
+    ,
     profileImage: {
-        marginTop: 10,
         width: 100,
         height: 100,
-        borderRadius: 50,
-        marginBottom: 15,
+    },
+    BottomLeftImage:{
+        width: 25,
+        height: 20,
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
     },
     Headercontainer: {
         flexDirection: 'row',
@@ -139,6 +157,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         justifyContent: 'center',
         borderRadius: 10,
+        marginTop: 10,
         marginBottom: 20,
     },
     inputContainer: {
