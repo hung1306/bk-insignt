@@ -32,7 +32,7 @@ export const HomeScreen = () => {
         </Text>
         <Pressable
           style={[styles.frameParent, styles.bkInSightSpaceBlock]}
-          onPress={() => {}}
+          onPress={() => navigation.navigate('Search')}
         >
           <View style={styles.image4Parent}>
             <Image
