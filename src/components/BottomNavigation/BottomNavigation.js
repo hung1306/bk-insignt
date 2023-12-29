@@ -10,7 +10,7 @@ export const BottomNavigation = () => {
           <Image
             style={styles.iconLayout}
             contentFit="cover"
-            source={require("../assets/vector9.png")}
+            // source={require("../assets/Home/vector9.png")}
           />
         </Pressable>
         <Pressable
@@ -20,7 +20,7 @@ export const BottomNavigation = () => {
           <Image
             style={styles.iconLayout}
             contentFit="cover"
-            source={require("../assets/vector2.png")}
+            // source={require("../assets/vector2.png")}
           />
         </Pressable>
         <Pressable
@@ -30,7 +30,7 @@ export const BottomNavigation = () => {
           <Image
             style={styles.iconLayout}
             contentFit="cover"
-            source={require("../assets/vector3.png")}
+            // source={require("../assets/vector3.png")}
           />
         </Pressable>
         <Pressable
@@ -40,7 +40,7 @@ export const BottomNavigation = () => {
           <Image
             style={styles.iconLayout}
             contentFit="cover"
-            source={require("../assets/union11.png")}
+            // source={require("../assets/union11.png")}
           />
         </Pressable>
       </View>
