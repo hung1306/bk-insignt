@@ -66,7 +66,7 @@ export const HomeScreen = () => {
             source={require("../../../assets/Home/image-67.png")}
           />
         </Pressable>
-        <Pressable style={styles.image68} onPress={() => {}}>
+        <Pressable style={styles.image68} onPress={() => navigation.navigate('Calendar')}>  
           <Image
             style={[styles.icon2, styles.iconLayout]}
             resizeMode="cover"
