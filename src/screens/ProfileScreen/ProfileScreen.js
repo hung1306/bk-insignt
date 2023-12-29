@@ -135,7 +135,7 @@ export const ProfileScreen = () => {
                         style={styles.icon2}
                     />
                 </Pressable>
-                <Pressable onPress={() => { }}>
+                <Pressable onPress={() => navigation.navigate('Map')}>
                     <Image
                         source={require("../../../assets/Home/vector3.png")}
                         style={styles.icon3}
