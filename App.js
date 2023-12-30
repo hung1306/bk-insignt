@@ -1,7 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { CalendarScreen } from './src/screens/CalendarScreen/CalendarScreen';
+import { ApplicationProvider } from '@ui-kitten/components';
+import * as eva from '@eva-design/eva';
+
+import  CalendarScreen  from './src/screens/CalendarScreen/CalendarScreen';
 import { HomeScreen } from './src/screens/HomeScreen/HomeScreen';
 import { LoginScreen } from './src/screens/LoginScreen/LoginScreen';
 import { MapScreen } from './src/screens/MapScreen/MapScreen';
@@ -19,6 +22,8 @@ import React, { useState } from 'react';
 import { InfoSearchScreen } from './src/screens/SearchScreen/InfoSearchScreen';
 import QrCodeScreen from './src/screens/QrCodeScreen/QrCodeScreen';
 import { DetailsScreen } from './src/screens/QrCodeScreen/DetailsScreen';
+import CalendarScreen2 from './src/screens/CalendarScreen/CalendarScreen2'
+import CalendarScreen3 from './src/screens/CalendarScreen/CalendarScreen3'
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -27,7 +32,9 @@ export default function App() {
   
 
   return (
+    <ApplicationProvider {...eva} theme={eva.light}>
     <NavigationContainer>
+{/* <<<<<<< HEAD */}
       <Stack.Navigator initialRouteName="Wellcome" screenOptions={{
           headerShown: false,
         }}>
@@ -46,8 +53,14 @@ export default function App() {
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="InfoSearch" component={InfoSearchScreen} />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
+{/* <<<<<<< HEAD */}
+{/* ======= */}
+        <Stack.Screen name="Calendar2" component={CalendarScreen2} />
+        <Stack.Screen name="Calendar3" component={CalendarScreen3} />
+{/* >>>>>>> c32e68409acf78f58af9b597c6899f932ff0a13a */}
       </Stack.Navigator>
     </NavigationContainer>
+    </ApplicationProvider>
   );
 }
 
