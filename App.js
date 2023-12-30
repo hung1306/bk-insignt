@@ -15,6 +15,8 @@ import { SearchScreen } from './src/screens/SearchScreen/SearchScreen';
 import { SignUpScreen } from './src/screens/SignUpScreen/SignUpScreem';
 import { WellcomeScreen } from './src/screens/WellcomeScreen/WellcomeScreen';
 import { InfoSearchScreen } from './src/screens/SearchScreen/InfoSearchScreen';
+import { InfoSearchScreen2 } from './src/screens/SearchScreen/InfoSearchScreen2';
+import { InfoSearchScreen3 } from './src/screens/SearchScreen/InfoSearchScreen3';
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -33,6 +35,8 @@ export default function App() {
         <Stack.Screen name="QrCode" component={QrCodeScreen} />
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="InfoSearch" component={InfoSearchScreen} />
+        <Stack.Screen name="InfoSearch2" component={InfoSearchScreen2} />
+        <Stack.Screen name="InfoSearch3" component={InfoSearchScreen3} />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
         <Stack.Screen name="WellCome" component={WellcomeScreen} />
       </Stack.Navigator>
