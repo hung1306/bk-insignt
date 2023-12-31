@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text, Image, Pressable, Dimensions } from "react-native";
 import { fontFamily, Color, FontSize, Border, Padding } from "../../../GlobalStyles";
 import { useNavigation } from '@react-navigation/native';
+import BottomNavigation from "../../components/BottomNavigation/BottomNavigation";
 export const HomeScreen = () => {
   const navigation = useNavigation();
   return (
@@ -104,32 +105,7 @@ export const HomeScreen = () => {
             />     
         </View>
       </View> 
-      <View style={styles.container}>
-                <Pressable onPress={() => navigation.navigate('Home')}>
-                    <Image
-                        source={require("../../../assets/Home/vector1.png")}
-                        style={styles.iconno1}
-                    />
-                </Pressable>
-                <Pressable onPress={() => { }}>
-                    <Image
-                        source={require("../../../assets/Home/vector2.png")}
-                        style={styles.iconno2}
-                    />
-                </Pressable>
-                <Pressable onPress={() => { }}>
-                    <Image
-                        source={require("../../../assets/Home/vector3.png")}
-                        style={styles.iconno3}
-                    />
-                </Pressable>
-                <Pressable onPress={() => navigation.navigate('Profile')}>
-                    <Image
-                        source={require("../../../assets/Home/union1.png")}
-                        style={styles.iconno3}
-                    />
-                </Pressable>
-            </View>
+      <BottomNavigation />
     </View>
   );
 };
@@ -240,11 +216,11 @@ const styles = StyleSheet.create({
     height: 20,
   },
   search: {
-    fontSize: 16,
+    fontSize: 18,
     color: "rgba(0, 0, 0, 0.5)",
     width: 260,
     marginLeft: 20,
-    height: 20,
+    height: 24,
     textAlign: "left",
     //fontFamily: //fontFamily.openSansRegular,
   },
@@ -255,13 +231,13 @@ const styles = StyleSheet.create({
   },
   khmPh: {
     width: 205,
-    height: 28,
+    height: 32,
     zIndex: 0,
     alignItems: "center",
   },
   khmPhTypo: {
     display: "flex",
-    fontSize: FontSize.size_xl,
+    fontSize: 20,
     alignItems: "center",
     textAlign: "left",
     color: Color.colorBlack,
@@ -313,6 +289,10 @@ const styles = StyleSheet.create({
     //fontFamily: //fontFamily.openSansRegular,
     position: "absolute",
   },
+  choMngN:{
+    fontSize: 18,
+  }
+  ,
   bn: {
     left: 280,
     width: 54,
@@ -339,13 +319,13 @@ const styles = StyleSheet.create({
   sKinNi: {
     top: 85,
     left: 12,
-    height: 20,
+    height: 30,
     alignItems: "center",
   },
   Tinblock:{
     top: 95,
     backgroundColor: 'white', 
-    height: 265 ,
+    height: 270 ,
   },
   Tin1: {
     top: 20,
@@ -365,7 +345,7 @@ const styles = StyleSheet.create({
   },
   thngTypo: {
     textAlign: "justify",
-    fontSize: 16,
+    fontSize: 18,
   },
   Tin2: {
     top: 40,
@@ -375,7 +355,7 @@ const styles = StyleSheet.create({
     left: 20,
     color: "rgba(0, 0, 0, 0.7)",
     width: 200,
-    height: 100,
+    height: 120,
   },
   imagetin2: {
     left: 30,
