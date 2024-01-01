@@ -20,10 +20,15 @@ import { WellcomeScreen } from './src/screens/WellcomeScreen/WellcomeScreen';
 import { Font } from 'expo-font';
 import React, { useState } from 'react';
 import { InfoSearchScreen } from './src/screens/SearchScreen/InfoSearchScreen';
+// <<<<<<< HEAD
 import QrCodeScreen from './src/screens/QrCodeScreen/QrCodeScreen';
 import { DetailsScreen } from './src/screens/QrCodeScreen/DetailsScreen';
 import CalendarScreen2 from './src/screens/CalendarScreen/CalendarScreen2'
 import CalendarScreen3 from './src/screens/CalendarScreen/CalendarScreen3'
+// =======
+import { InfoSearchScreen2 } from './src/screens/SearchScreen/InfoSearchScreen2';
+import { InfoSearchScreen3 } from './src/screens/SearchScreen/InfoSearchScreen3';
+// >>>>>>> 24e28b7fa8c3858f82acc90fafe40ed31ca56409
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -34,7 +39,6 @@ export default function App() {
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
     <NavigationContainer>
-{/* <<<<<<< HEAD */}
       <Stack.Navigator initialRouteName="Wellcome" screenOptions={{
           headerShown: false,
         }}>
@@ -52,6 +56,8 @@ export default function App() {
         <Stack.Screen name="ChangeAvatar" component={ChangeAvatarScreen} />
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="InfoSearch" component={InfoSearchScreen} />
+        <Stack.Screen name="InfoSearch2" component={InfoSearchScreen2} />
+        <Stack.Screen name="InfoSearch3" component={InfoSearchScreen3} />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
 {/* <<<<<<< HEAD */}
 {/* ======= */}

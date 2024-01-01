@@ -1,26 +1,41 @@
 import { StyleSheet, View, Text, Image,  TextInput,Pressable,FlatList,TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { fontFamily, Color, FontSize, Border, Padding } from "../../../GlobalStyles";
+import React, { useState } from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 const data = [
-  { id: '1', text: 'HCMUT Football Club', image1: require('../../../assets/Search/logo.png'), image2: require('../../../assets/Search/3cham.png') },
+  { id: '1', text: 'HCMUT Football Club', image1: require('../../../assets/Search/logo.png') },
+  { id: '2', text: 'Đội xung kích khoa điện - điện tử', image1: require('../../../assets/Search/dxkddt.png') },
+  { id: '3', text: 'CLB đá banh khoa Điện -điện tử', image1: require('../../../assets/Search/dabanhddt.png') },
+  { id: '4', text: 'Thủ khoa đầu vào năm 2023', image1: require('../../../assets/Search/thukhoa.png')},
+  { id: '5', text: 'Chương trình kỹ sư tài năng', image1: require('../../../assets/Search/kstn.png') },
+  { id: '6', text: 'Lịch nghỉ tết nguyên đán 2024', image1: require('../../../assets/Search/lichnghi.png') },
 ];
-const RowItem = ({ item }) => (
-  <View style={styles.row}>
-    <Image style={styles.image1} source={item.image1} />
-    <Text>{item.text}</Text>
-    <Image style={styles.image2} source={item.image2} />
-  </View>
-);
+const Stack = createStackNavigator();
+
 export const SearchScreen = () => {
     const navigation = useNavigation();
-    const handleRowPress = () => {
-      // Chỉ chuyển hướng đến trang mới nếu đây là hàng đầu tiên
-      
-        navigation.navigate('InfoSearch');
-      
+    const [searchKeyword, setSearchKeyword] = useState("");
+    const filteredData = data.filter(item =>
+      item.text.toLowerCase().includes(searchKeyword.toLowerCase())
+    );
+    const isSearching = searchKeyword !== '';
+    const displayedData = searchKeyword ? filteredData : data;
+    const handleItemPress = (item) => {
+   
+      if (item.id === '1') {
+        navigation.navigate('InfoSearch', { itemId: item.id });
+      } else if (item.id === '2') {
+        navigation.navigate('InfoSearch2', { itemId: item.id });
+      } else if (item.id === '3') {
+        navigation.navigate('InfoSearch3', { itemId: item.id });
+      }
     };
     
+
     return (
+      
      <View>
            <View  style={styles.container}>
       <View style={styles.headerContainer}>
@@ -37,11 +52,13 @@ export const SearchScreen = () => {
             resizeMode="cover"
             source={require('../../../assets/Home/image-4.png')}
           />
-          <TextInput
-            style={styles.searchInput}
-            placeholder="Tìm kiếm"
-            placeholderTextColor="#888"
-          />
+           <TextInput
+        style={styles.searchInput}
+        placeholder="Tìm kiếm"
+        placeholderTextColor="#888"
+        value={searchKeyword}
+        onChangeText={setSearchKeyword}
+      />
         </View>
         
 
@@ -56,49 +73,37 @@ export const SearchScreen = () => {
           <Text style={styles.action2Button}>Xem tất cả</Text>
         </Pressable>
     </View>
-   {/* <View>
-   <View>
-   <Image
-                source={require('../../../assets/Search/logo.png')}
-                style={styles.iconlogo}
-        resizeMode="cover"
-              />
-              
-   <Pressable
-        style={styles.hcmutFootballClubContainer}
-        onPress={() => navigation.navigate("InfoSearch")}
-      >
-        <Text style={styles.hcmutFootballClub}>HCMUT Football Club</Text>
-      </Pressable>
-   </View>
-      <Text style={[styles.iXungKchContainer, styles.containerTypo]}>
-        {`Đội Xung kích khoa `}Điện - Điện tử
-      </Text>
-      <Text style={[styles.cuLcBContainer, styles.containerTypo]}>
-        Câu lạc bộ đá banh khoa Điện - Điện tử
-      </Text>
-      <Text style={[styles.cuLcBContainer, styles.containerTypo]}>
-        Câu lạc bộ đá banh khoa Điện - Điện tử
-      </Text>
-      <Text style={[styles.thKhoaU, styles.containerTypo]}>
-        Thủ khoa đầu vào năm 2023-2023
-      </Text>
-      <Text style={[styles.chngTrnhK, styles.containerTypo]}>
-        Chương trình kỹ sư tài năng
-      </Text>
-      <Text style={[styles.lchNghTt, styles.containerTypo]}>
-        Lịch nghỉ tết nguyên đán 2024
-      </Text>
-      
-   </View> */}
-   <TouchableOpacity onPress={handleRowPress}>
-   {data.map((item) => (
-        <RowItem key={item.id} item={item} />
-      ))}
-   </TouchableOpacity>
-      
+    {isSearching ? (
+        <FlatList
+          data={filteredData}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <TouchableOpacity onPress={() => handleItemPress(item)}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 25,top:30 }}>
+                <Image source={item.image1} style={styles.image1} />
+                <Text style={styles.itemText}>{item.text}</Text>
+              </View>
+            </TouchableOpacity>
+          )}
+        />
+      ) : (
+        <View>
+          {data.map(item => (
+            <TouchableOpacity key={item.id} onPress={() => handleItemPress(item)}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 10,top:30 }}>
+                <Image source={item.image1} style={styles.image1} />
+                <Text style={styles.itemText}>{item.text}</Text>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </View>
+      )}
+
+
      </View>
     )
+    console.log(displayedData);
+
 }
 const styles = StyleSheet.create({
    
@@ -232,6 +237,7 @@ const styles = StyleSheet.create({
         height: 50,
         left:30,
         resizeMode: 'cover',
+        marginRight:60,
       },
 
       image2: {
