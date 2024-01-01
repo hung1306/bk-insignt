@@ -52,38 +52,31 @@ export const HomeScreen = () => {
       </View>
       <View style={styles.khmPhParent}>
         <Text style={[styles.khmPh, styles.khmPhTypo]}>Khám phá</Text>
-        <View style={styles.frameChild}>
-        <View>
-          <Pressable style={[styles.kphaImage]} onPress={() => {}}>
+        <View style={styles.frameChild} />
+        <Pressable style={styles.image66} onPress={() => {}}>
           <Image
             style={styles.iconLayout}
             resizeMode="cover"
             source={require("../../../assets/Home/image-66.png")}
           />
-          </Pressable>
-          <Text style={[styles.kphaText]}>Bản đồ</Text>
-        </View>
-        <View>
-          <Pressable style={[styles.kphaImage]} onPress={() => {}}>
+        </Pressable>
+        <Pressable style={styles.image67} onPress={() => {}}>
           <Image
             style={styles.iconLayout}
             resizeMode="cover"
             source={require("../../../assets/Home/image-67.png")}
           />
-          </Pressable>
-          <Text style={[styles.kphaText]}>Tin tức</Text>
-        </View>
-        <View>
-          <Pressable style={[styles.kphaImage]} onPress={() => {}}>
+        </Pressable>
+        <Pressable style={styles.image68} onPress={() => {}}>
           <Image
-            style={styles.iconLayout}
+            style={[styles.icon2, styles.iconLayout]}
             resizeMode="cover"
             source={require("../../../assets/Home/image-68.png")}
           />
-          </Pressable>
-          <Text style={[styles.kphaText]}>Lịch hoạt động</Text>
-        </View>
-        </View>
+        </Pressable>
+        <Text style={[styles.tinTc, styles.bnTypo]}>Tin tức</Text>
+        <Text style={[styles.lchHotNg, styles.bnTypo]}>Lịch hoạt động</Text>
+        <Text style={[styles.bn, styles.bnTypo]}>Bản đồ</Text>
       </View>
 
       <Text style={[styles.sKinNi, styles.khmPhTypo]}>Sự kiện nổi bật</Text>
@@ -256,10 +249,45 @@ const styles = StyleSheet.create({
     height: 111,
     zIndex: 1,
     width: "100%",
-    flexDirection: "row",
-    paddingHorizontal: 20,
-    justifyContent: 'space-between',
-    paddingTop:10,
+  },
+  image66: {
+    left: 10,
+    top: 42,
+    width: 83,
+    height: 62,
+    zIndex: 2,
+    position: "absolute",
+  },
+  image67: {
+    left: 260,
+    top: 45,
+    width: 80,
+    height: 59,
+    zIndex: 3,
+    position: "absolute",
+  },
+  image68: {
+    top: 38,
+    width: 94,
+    zIndex: 4,
+    height: 70,
+    left: "50%",
+    position: "absolute",
+  },
+  iconLayout: {
+    marginTop: -5,
+    height: 75,
+    width: "100%",
+  },
+  bnTypo: {
+    height: 20,
+    fontSize: FontSize.size_mini,
+    alignItems: "center",
+    display: "flex",
+    textAlign: "left",
+    color: Color.colorBlack,
+    //fontFamily: //fontFamily.openSansRegular,
+    position: "absolute",
   },
   choMngN:{
     fontSize: 18,
@@ -370,13 +398,4 @@ const styles = StyleSheet.create({
     width: 27,
     height: 29,
 },  
-iconLayout: {
-  height: 75,
-  width: 80,
-  alignSelf: 'center',
-},
-kphaText:{
-  alignSelf: 'center',
-  fontSize:16,
-},
 });

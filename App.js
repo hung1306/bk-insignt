@@ -14,7 +14,6 @@ import { QrCodeScreen } from './src/screens/QrCodeScreen/QrCodeScreen';
 import { SearchScreen } from './src/screens/SearchScreen/SearchScreen';
 import { SignUpScreen } from './src/screens/SignUpScreen/SignUpScreem';
 import { WellcomeScreen } from './src/screens/WellcomeScreen/WellcomeScreen';
-
 const Stack = createStackNavigator();
 export default function App() {
   return (
