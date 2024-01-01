@@ -1,6 +1,20 @@
-import { StyleSheet, View, Text, Image, Pressable, Dimensions } from "react-native";
-import { fontFamily, Color, FontSize, Border, Padding } from "../../../GlobalStyles";
-import { useNavigation } from '@react-navigation/native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  Pressable,
+  Dimensions,
+} from "react-native";
+import {
+  fontFamily,
+  Color,
+  FontSize,
+  Border,
+  Padding,
+} from "../../../GlobalStyles";
+import { useNavigation } from "@react-navigation/native";
+import BottomNavigation from "../../components/BottomNavigation/BottomNavigation";
 export const HomeScreen = () => {
   const navigation = useNavigation();
   return (
@@ -12,7 +26,7 @@ export const HomeScreen = () => {
           source={require("../../../assets/Home/vector.png")}
         />
         <Text style={styles.trangCh}>Trang chủ</Text>
-        <Pressable style={styles.wrapper} onPress={() => {}}>
+        <Pressable style={styles.wrapper} onPress={() => navigation.navigate("QrCode")}>
           <Image
             style={styles.vectorIcon}
             resizeMode="cover"
@@ -32,7 +46,7 @@ export const HomeScreen = () => {
         </Text>
         <Pressable
           style={[styles.frameParent, styles.bkInSightSpaceBlock]}
-          onPress={() => navigation.navigate('Search')}
+          onPress={() => navigation.navigate("Search")}
         >
           <View style={styles.image4Parent}>
             <Image
@@ -66,7 +80,10 @@ export const HomeScreen = () => {
             source={require("../../../assets/Home/image-67.png")}
           />
         </Pressable>
-        <Pressable style={styles.image68} onPress={() => navigation.navigate('Calendar')}>  
+        <Pressable
+          style={styles.image68}
+          onPress={() => navigation.navigate("Calendar")}
+        >
           <Image
             style={[styles.icon2, styles.iconLayout]}
             resizeMode="cover"
@@ -81,55 +98,30 @@ export const HomeScreen = () => {
       <Text style={[styles.sKinNi, styles.khmPhTypo]}>Sự kiện nổi bật</Text>
       <View style={[styles.Tinblock]}>
         <View style={[styles.Tin1]}>
-            <Image
-              style={[styles.imagetin1]}
-              resizeMode="cover"
-              source={require("../../../assets/Home/image-33.png")}
-            />
+          <Image
+            style={[styles.imagetin1]}
+            resizeMode="cover"
+            source={require("../../../assets/Home/image-33.png")}
+          />
           <Text style={[styles.tin1Container, styles.thngTypo]}>
-                Thông báo tới tất cả học sinh ngày 
-                20/08/2023, thẻ sinh viên sẽ bị kiểm tra đột xuất.
+            Thông báo tới tất cả học sinh ngày 20/08/2023, thẻ sinh viên sẽ bị
+            kiểm tra đột xuất.
           </Text>
         </View>
         <View style={[styles.line]}></View>
         <View style={[styles.Tin2]}>
           <Text style={[styles.tin2Container, styles.thngTypo]}>
             Thông báo tuyển thành viên câu lạc bộ bóng đá ngày 20/08/2023 để
-              chuẩn bị cho hội thao sinh viên.
-          </Text>   
+            chuẩn bị cho hội thao sinh viên.
+          </Text>
           <Image
-              style={[styles.imagetin2]}
-              resizeMode="cover"
-              source={require("../../../assets/Home/image-60.png")}
-            />     
+            style={[styles.imagetin2]}
+            resizeMode="cover"
+            source={require("../../../assets/Home/image-60.png")}
+          />
         </View>
-      </View> 
-      <View style={styles.container}>
-                <Pressable onPress={() => navigation.navigate('Home')}>
-                    <Image
-                        source={require("../../../assets/Home/vector1.png")}
-                        style={styles.iconno1}
-                    />
-                </Pressable>
-                <Pressable onPress={() => { }}>
-                    <Image
-                        source={require("../../../assets/Home/vector2.png")}
-                        style={styles.iconno2}
-                    />
-                </Pressable>
-                <Pressable onPress={() => navigation.navigate('Map')}>
-                    <Image
-                        source={require("../../../assets/Home/vector3.png")}
-                        style={styles.iconno3}
-                    />
-                </Pressable>
-                <Pressable onPress={() => navigation.navigate('Profile')}>
-                    <Image
-                        source={require("../../../assets/Home/union1.png")}
-                        style={styles.iconno3}
-                    />
-                </Pressable>
-            </View>
+      </View>
+      <BottomNavigation />
     </View>
   );
 };
@@ -178,7 +170,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     left: "50%",
     position: "absolute",
-  },  
+  },
 
   choMngNViParent: {
     top: 66,
@@ -342,14 +334,14 @@ const styles = StyleSheet.create({
     height: 20,
     alignItems: "center",
   },
-  Tinblock:{
+  Tinblock: {
     top: 95,
-    backgroundColor: 'white', 
-    height: 265 ,
+    backgroundColor: "white",
+    height: 265,
   },
   Tin1: {
     top: 20,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   imagetin1: {
     left: 20,
@@ -369,7 +361,7 @@ const styles = StyleSheet.create({
   },
   Tin2: {
     top: 40,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   tin2Container: {
     left: 20,
@@ -383,23 +375,23 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_3xs,
     height: 100,
   },
-  line:{
+  line: {
     top: 32,
     height: 1,
     backgroundColor: "#77787b",
-    alignSelf: 'center',
+    alignSelf: "center",
     width: "90%",
   },
   container: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 5,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    backgroundColor: 'white',
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "white",
     height: 60,
     paddingHorizontal: 20,
-    width: '100%',
+    width: "100%",
     borderRadius: 20,
   },
   icon: {
@@ -409,13 +401,13 @@ const styles = StyleSheet.create({
   iconno1: {
     width: 34,
     height: 24,
-},
+  },
   iconno2: {
     width: 27,
     height: 30,
-},
+  },
   iconno3: {
     width: 27,
     height: 29,
-},  
+  },
 });

@@ -1,14 +1,22 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
-import SlideShow from './SlideImage';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import RatingStars from './RatingStars';
-import Comment from './Comment';
+import React from "react";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
+import SlideShow from "./SlideImage";
+import Icon from "react-native-vector-icons/FontAwesome";
+import RatingStars from "./RatingStars";
+import Comment from "./Comment";
 
 export const DetailsScreen = ({ navigation }) => {
   const placeInfo = {
-    name: 'Tòa A5',
-    detail: 'Tòa A5 là  nơi đặt phòng làm việc của phòng quan hệ dối ngoại, phòng thanh tra pháp chế, trung tâm dữ liệu và công nghệ thông tin... Hội trường A5 với quy mô lớn nhất trường cũng tọa lạc ở đây.',
+    name: "Tòa A5",
+    detail:
+      "Tòa A5 là  nơi đặt phòng làm việc của phòng quan hệ dối ngoại, phòng thanh tra pháp chế, trung tâm dữ liệu và công nghệ thông tin... Hội trường A5 với quy mô lớn nhất trường cũng tọa lạc ở đây.",
   };
 
   return (
@@ -17,13 +25,20 @@ export const DetailsScreen = ({ navigation }) => {
       ListHeaderComponent={
         <>
           {/* Navigation */}
-          <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.backNavigation}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Home")}
+            style={styles.backNavigation}
+          >
             <View style={styles.backIcon}>
-              <Icon name="angle-left" size={30} color="#4E0189" style={styles.icon} />
+              <Icon
+                name="angle-left"
+                size={30}
+                color="#4E0189"
+                style={styles.icon}
+              />
             </View>
-            <Text style={styles.backText}>QR Code</Text>
+            <Text style={styles.backText}>Tòa A5</Text>
           </TouchableOpacity>
-
           {/* Hình ảnh */}
           <View style={styles.slideShow}>
             <SlideShow />
@@ -43,7 +58,7 @@ export const DetailsScreen = ({ navigation }) => {
       }
       ListFooterComponent={<Comment />}
       data={[]}
-      keyExtractor={() => ''}
+      keyExtractor={() => ""}
       renderItem={() => null}
     />
   );
@@ -52,42 +67,41 @@ export const DetailsScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#87CBF0',
-    marginTop: 10
+    backgroundColor: "#87CBF0",
+    marginTop: 10,
   },
   backNavigation: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     padding: 15,
-    
   },
   backIcon: {
     margin: 8,
     height: 30,
     width: 30,
-    backgroundColor: '#EBD8FF',
+    backgroundColor: "#EBD8FF",
     borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   icon: {},
   backText: {
     fontSize: 25,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   slideShow: {
     flex: 1,
     height: 290,
   },
   detailContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     marginBottom: 16,
     margin: 10,
     borderRadius: 15,
   },
   placeName: {
     fontSize: 27,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 8,
   },
   detailText: {
@@ -95,9 +109,9 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   headerDetailContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
     margin: 15,
   },
 });

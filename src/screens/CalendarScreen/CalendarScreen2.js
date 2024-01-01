@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { ScrollView, View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import { fontFamily, Color, FontSize, Border } from "../../../GlobalStyles";
 import { useNavigation } from '@react-navigation/native';
+import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
 
 
 const CalendarScreen2 = () => {
   const navigation = useNavigation();
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
         <View style={[styles.T]}>
             <Pressable onPress={() => navigation.navigate('Calendar')}>
                 <Image
@@ -72,34 +73,9 @@ const CalendarScreen2 = () => {
                     </View>     
                 </Pressable>
             </View>
-            {/* <View style={styles.container1}>
-                <Pressable onPress={() => navigation.navigate('Home')}>
-                    <Image
-                        source={require("../../../assets/Home/vector1.png")}
-                        style={styles.iconno1}
-                    />
-                </Pressable>
-                <Pressable onPress={() => { }}>
-                    <Image
-                        source={require("../../../assets/Home/vector2.png")}
-                        style={styles.iconno2}
-                    />
-                </Pressable>
-                <Pressable onPress={() => { }}>
-                    <Image
-                        source={require("../../../assets/Home/vector3.png")}
-                        style={styles.iconno3}
-                    />
-                </Pressable>
-                <Pressable onPress={() => navigation.navigate('Profile')}>
-                    <Image
-                        source={require("../../../assets/Home/union1.png")}
-                        style={styles.iconno3}
-                    />
-                </Pressable>
-            </View> */}
+            <BottomNavigation />
         
-    </ScrollView>
+    </View>
   );
 };
 
