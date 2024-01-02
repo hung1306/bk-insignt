@@ -55,29 +55,32 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: 230,
+    height: 230,
     resizeMode: "contain",
     marginBottom: 20,
   },
   logo1: {
-    width: 50,
-    height: 50,
+    width: 70,
+    height: 70,
     resizeMode: "contain",
     marginBottom: 20,
     // backgroundColor: "#000",
   },
   logo2: {
-    width: 150,
-    height: 50,
+    width: 210,
+    height: 70,
     resizeMode: "contain",
     marginBottom: 20,
-    backgroundColor: "#fff",
+    color: '#fff'
+    // backgroundColor: "#fff",
   },
   appName: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 20,
+    textTransform: 'uppercase',
+    color: "#fff",
   },
   button: {
     backgroundColor: "#3C637F",
@@ -87,8 +90,9 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#ffffff",
-    fontSize: 27,
-    fontWeight: "bold",
+    fontSize: 25,
+    // fontWeight: "bold",
     textAlign: "center",
+    // alignItems: 'center'
   },
 });

@@ -39,7 +39,6 @@ export default function App() {
         >
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
-          <Stack.Screen name="Calendar" component={CalendarScreen} />
           <Stack.Screen name="Map" component={MapScreen} />
           <Stack.Screen name="Profile" component={ProfileScreen} />
           <Stack.Screen name="ChangeInfo" component={ChangeInfoScreen} />
@@ -48,13 +47,14 @@ export default function App() {
           <Stack.Screen name="ChangeAvatar" component={ChangeAvatarScreen} />
           <Stack.Screen name="QrCode" component={QrCodeScreen} />
           <Stack.Screen name="Search" component={SearchScreen} />
-          <Stack.Screen name="InfoSearch" component={InfoSearchScreen} />
           <Stack.Screen name="SignUp" component={SignUpScreen} />
           <Stack.Screen name="Wellcome" component={WellcomeScreen} />
           <Stack.Screen name="Wellcome1" component={WellcomeScreen1} />
           <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen name="Calendar" component={CalendarScreen} />
           <Stack.Screen name="Calendar2" component={CalendarScreen2} />
           <Stack.Screen name="Calendar3" component={CalendarScreen3} />
+          <Stack.Screen name="InfoSearch" component={InfoSearchScreen} />
           <Stack.Screen name="InfoSearch2" component={InfoSearchScreen2} />
           <Stack.Screen name="InfoSearch3" component={InfoSearchScreen3} />
         </Stack.Navigator>
