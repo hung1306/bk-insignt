@@ -26,7 +26,10 @@ export const HomeScreen = () => {
           source={require("../../../assets/Home/vector.png")}
         />
         <Text style={styles.trangCh}>Trang chủ</Text>
-        <Pressable style={styles.wrapper} onPress={() => navigation.navigate("QrCode")}>
+        <Pressable
+          style={styles.wrapper}
+          onPress={() => navigation.navigate("QrCode")}
+        >
           <Image
             style={styles.vectorIcon}
             resizeMode="cover"
@@ -66,14 +69,14 @@ export const HomeScreen = () => {
       <View style={styles.khmPhParent}>
         <Text style={[styles.khmPh, styles.khmPhTypo]}>Khám phá</Text>
         <View style={styles.frameChild} />
-        <Pressable style={styles.image66} onPress={() => {}}>
+        <Pressable style={styles.image66} onPress={() => navigation.navigate('Calendar2')}>
           <Image
             style={styles.iconLayout}
             resizeMode="cover"
             source={require("../../../assets/Home/image-66.png")}
           />
         </Pressable>
-        <Pressable style={styles.image67} onPress={() => {}}>
+        <Pressable style={styles.image67} onPress={() => navigation.navigate('Map')}>
           <Image
             style={styles.iconLayout}
             resizeMode="cover"
@@ -120,6 +123,18 @@ export const HomeScreen = () => {
             source={require("../../../assets/Home/image-60.png")}
           />
         </View>
+        <View style={[styles.line, styles.marginTop]}></View>
+        <View style={[styles.Tin1, styles.marginTop]}>
+          <Image
+            style={[styles.imagetin1]}
+            resizeMode="cover"
+            source={require("../../../assets/Home/image-63.png")}
+          />
+          <Text style={[styles.tin1Container, styles.thngTypo]}>
+            Chương trình đào tạo thạc sĩ dành cho sinh viên có GPA từ 7.0 trở
+            lên với nhiều lợi ích cùng con đường học tập rõ ràng...
+          </Text>
+        </View>
       </View>
       <BottomNavigation />
     </View>
@@ -129,11 +144,12 @@ const styles = StyleSheet.create({
   homepage: {
     backgroundColor: "#87cbf0",
     flex: 1,
-    //overflow: "hidden",
+    overflow: "hidden",
     width: "100%",
+    marginTop: 20,
   },
   trangCh: {
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: "600",
     //fontFamily: //fontFamily.openSansSemiBold,
     color: "#030303",
@@ -142,7 +158,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   vectorIcon: {
-    width: 45,
+    width: 40,
     height: 40,
   },
   wrapper: {
@@ -174,7 +190,7 @@ const styles = StyleSheet.create({
 
   choMngNViParent: {
     top: 66,
-    backgroundColor: "#f4f1f1",
+    backgroundColor: "#f1f1f1",
     paddingHorizontal: 11,
     paddingVertical: 0,
     alignItems: "flex-end",
@@ -186,6 +202,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     textAlign: "left",
   },
+  choMngN: {
+    fontSize: 20,
+    fontStyle: "italic",
+  },
   bkInSight: {
     fontSize: 36,
     textAlign: "center",
@@ -193,6 +213,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
     display: "flex",
+    fontWeight: "700",
     color: Color.colorBlack,
     //fontFamily: //fontFamily.openSansRegular,
   },
@@ -232,11 +253,11 @@ const styles = StyleSheet.create({
     height: 20,
   },
   search: {
-    fontSize: 16,
+    fontSize: 18,
     color: "rgba(0, 0, 0, 0.5)",
     width: 260,
     marginLeft: 20,
-    height: 20,
+    height: 24,
     textAlign: "left",
     //fontFamily: //fontFamily.openSansRegular,
   },
@@ -247,15 +268,16 @@ const styles = StyleSheet.create({
   },
   khmPh: {
     width: 205,
-    height: 28,
+    height: 32,
     zIndex: 0,
     alignItems: "center",
   },
   khmPhTypo: {
     display: "flex",
-    fontSize: FontSize.size_xl,
+    fontSize: 22,
     alignItems: "center",
     textAlign: "left",
+    fontWeight: "400",
     color: Color.colorBlack,
     //fontFamily: //fontFamily.openSansRegular,
   },
@@ -267,7 +289,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   image66: {
-    left: 10,
+    left: 20,
     top: 42,
     width: 83,
     height: 62,
@@ -275,7 +297,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   image67: {
-    left: 260,
+    left: 285,
     top: 45,
     width: 80,
     height: 59,
@@ -287,7 +309,7 @@ const styles = StyleSheet.create({
     width: 94,
     zIndex: 4,
     height: 70,
-    left: "50%",
+    left: "53%",
     position: "absolute",
   },
   iconLayout: {
@@ -304,9 +326,10 @@ const styles = StyleSheet.create({
     color: Color.colorBlack,
     //fontFamily: //fontFamily.openSansRegular,
     position: "absolute",
+    fontWeight: 400,
   },
   bn: {
-    left: 280,
+    left: 305,
     width: 54,
     zIndex: 7,
     top: 113,
@@ -314,12 +337,12 @@ const styles = StyleSheet.create({
   },
   lchHotNg: {
     top: 113,
-    left: 134,
+    left: 150,
     width: 112,
     zIndex: 6,
   },
   tinTc: {
-    left: 32,
+    left: 35,
     width: 52,
     zIndex: 5,
     top: 113,
@@ -331,13 +354,15 @@ const styles = StyleSheet.create({
   sKinNi: {
     top: 85,
     left: 12,
-    height: 20,
+    height: 30,
     alignItems: "center",
   },
   Tinblock: {
     top: 95,
-    backgroundColor: "white",
-    height: 265,
+    backgroundColor: "#fff",
+    height: 383,
+    // width: '95%',
+    // alignItems: 'center'
   },
   Tin1: {
     top: 20,
@@ -409,5 +434,8 @@ const styles = StyleSheet.create({
   iconno3: {
     width: 27,
     height: 29,
+  },
+  marginTop: {
+    marginTop: 20,
   },
 });

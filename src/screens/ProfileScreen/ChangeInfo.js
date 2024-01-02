@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
         flex: 1,
         overflow: "hidden",
         width: "100%",
+        marginTop: 20,
     },
     profile: {
         alignItems: 'center',

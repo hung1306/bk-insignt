@@ -2,6 +2,7 @@ import { StyleSheet, View, Text, Image, Pressable, TextInput, Button } from "rea
 import { useNavigation } from '@react-navigation/native';
 import Slider from '@react-native-community/slider';
 import { useState } from 'react';
+import BottomNavigation from "../../components/BottomNavigation/BottomNavigation";
 export const ChangeAvatarScreen = () => {
     const navigation = useNavigation();
     const [value, setValue] = useState(50);
@@ -65,6 +66,7 @@ export const ChangeAvatarScreen = () => {
             <Pressable style={styles.buttonContainer} onPress={() => navigation.navigate('Profile')}>
                 <Text style={styles.buttonText}>Lưu</Text>
             </Pressable>
+            <BottomNavigation />
         </View>
     )
 }
@@ -74,6 +76,7 @@ const styles = StyleSheet.create({
         flex: 1,
         overflow: "hidden",
         width: "100%",
+        marginTop: 20,
     },
     Headercontainer: {
         flexDirection: 'row',

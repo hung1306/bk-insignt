@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text, Image, Pressable, ScrollView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
+import BottomNavigation from "../../components/BottomNavigation/BottomNavigation";
 export const ProfileScreen = () => {
     const navigation = useNavigation();
     const [isToggled, setIsToggled] = useState(false);
@@ -104,7 +105,7 @@ export const ProfileScreen = () => {
                         </View>
                     </Pressable>
                     <View style={styles.separator} />
-                    <Pressable style={[]} onPress={() => { }}>
+                    <Pressable style={[]} onPress={() => {navigation.navigate('Login') }}>
                         <View style={styles.settingItem}>
                             <Image
                                 resizeMode="cover"
@@ -121,8 +122,8 @@ export const ProfileScreen = () => {
                     </Pressable>
                 </ScrollView>
             </View>
-
-            <View style={styles.container}>
+            <BottomNavigation />
+            {/* <View style={styles.container}>
                 <Pressable onPress={() => navigation.navigate('Home')}>
                     <Image
                         source={require("../../../assets/Home/vector1.png")}
@@ -147,7 +148,7 @@ export const ProfileScreen = () => {
                         style={styles.icon3}
                     />
                 </Pressable>
-            </View>
+            </View> */}
         </View>
     )
 }
@@ -157,6 +158,7 @@ const styles = StyleSheet.create({
         flex: 1,
         overflow: "hidden",
         width: "100%",
+        marginTop: 20,
     },
     container: {
         position: 'absolute',

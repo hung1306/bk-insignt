@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text, Image, Pressable, ScrollView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import BottomNavigation from "../../components/BottomNavigation/BottomNavigation";
 export const InfoScreen = () => {
     const navigation = useNavigation();
     return (
@@ -68,6 +69,7 @@ export const InfoScreen = () => {
             <Pressable style={styles.buttonContainer} onPress={() => navigation.navigate('ChangeInfo')}>
                     <Text style={styles.buttonText}>Thay đổi</Text>
             </Pressable>
+            <BottomNavigation />
         </View>
     )
 }
@@ -77,6 +79,7 @@ const styles = StyleSheet.create({
         flex: 1,
         overflow: "hidden",
         width: "100%",
+        marginTop: 20,
     },
     profile: {
         alignItems: 'center',
