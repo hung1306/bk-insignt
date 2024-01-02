@@ -6,11 +6,13 @@ import {
   StyleSheet,
   TouchableOpacity,
   FlatList,
+  ScrollView,
 } from "react-native";
 import SlideShow from "./SlideImage";
 import Icon from "react-native-vector-icons/FontAwesome";
 import RatingStars from "./RatingStars";
 import Comment from "./Comment";
+import BottomNavigation from "../../components/BottomNavigation/BottomNavigation";
 
 export const DetailsScreen = ({ navigation }) => {
   const placeInfo = {
@@ -20,47 +22,43 @@ export const DetailsScreen = ({ navigation }) => {
   };
 
   return (
-    <FlatList
-      style={styles.container}
-      ListHeaderComponent={
-        <>
-          {/* Navigation */}
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Home")}
-            style={styles.backNavigation}
-          >
-            <View style={styles.backIcon}>
-              <Icon
-                name="angle-left"
-                size={30}
-                color="#4E0189"
-                style={styles.icon}
-              />
-            </View>
-            <Text style={styles.backText}>Tòa A5</Text>
-          </TouchableOpacity>
-          {/* Hình ảnh */}
-          <View style={styles.slideShow}>
-            <SlideShow />
-          </View>
+    <ScrollView style={styles.container}>
+      {/* Navigation */}
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Home")}
+        style={styles.backNavigation}
+      >
+        <View style={styles.backIcon}>
+          <Icon
+            name="angle-left"
+            size={30}
+            color="#4E0189"
+            style={styles.icon}
+          />
+        </View>
+        <Text style={styles.backText}>Tòa A5</Text>
+      </TouchableOpacity>
 
-          {/* Chi tiết */}
-          <View style={styles.detailContainer}>
-            <View style={styles.headerDetailContainer}>
-              <Text style={styles.placeName}>{placeInfo.name}</Text>
-              <RatingStars />
-            </View>
-            <View>
-              <Text style={styles.detailText}>{placeInfo.detail}</Text>
-            </View>
-          </View>
-        </>
-      }
-      ListFooterComponent={<Comment />}
-      data={[]}
-      keyExtractor={() => ""}
-      renderItem={() => null}
-    />
+      {/* Hình ảnh */}
+      <View style={styles.slideShow}>
+        <SlideShow />
+      </View>
+
+      {/* Chi tiết */}
+      <View style={styles.detailContainer}>
+        <View style={styles.headerDetailContainer}>
+          <Text style={styles.placeName}>{placeInfo.name}</Text>
+          <RatingStars />
+        </View>
+        <View>
+          <Text style={styles.detailText}>{placeInfo.detail}</Text>
+        </View>
+      </View>
+
+      {/* ListFooterComponent */}
+      <Comment />
+      {/* <BottomNavigation /> */}
+    </ScrollView>
   );
 };
 
@@ -68,7 +66,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#87CBF0",
-    marginTop: 10,
+    marginTop: 20,
   },
   backNavigation: {
     flexDirection: "row",

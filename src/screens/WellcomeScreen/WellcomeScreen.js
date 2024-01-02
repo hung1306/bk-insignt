@@ -1,6 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 export const WellcomeScreen = () => {
   const navigation = useNavigation();
@@ -32,11 +33,12 @@ export const WellcomeScreen = () => {
         </View>
       </View>
       {/* Nút Tiếp tục */}
-      <View>
-        <TouchableOpacity style={styles.button} onPress={handleContinue}>
+      <TouchableOpacity style={styles.button} onPress={handleContinue}>
+        <View style={styles.buttonContent}>
           <Text style={styles.buttonText}>Tiếp tục</Text>
-        </TouchableOpacity>
-      </View>
+          <Icon name="arrow-right" size={20} color="#ffffff" />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#C0E4F8",
+    backgroundColor: "#30a8e8",
   },
   containerlogo: {
     display: "flex",
@@ -72,27 +74,37 @@ const styles = StyleSheet.create({
     height: 70,
     resizeMode: "contain",
     marginBottom: 20,
-    color: '#fff'
+    // color: '#fff'
     // backgroundColor: "#fff",
   },
   appName: {
     fontSize: 30,
     fontWeight: "bold",
     marginBottom: 20,
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
     color: "#fff",
   },
   button: {
+    marginTop: 250,
     backgroundColor: "#3C637F",
     width: 220,
-    height: 55,
-    borderRadius: 10,
+    height: 60,
+    borderRadius: 15,
+    padding: 10,
+    alignItems: 'center',
+    borderWidth: 3, 
+    borderColor: 'white',
+    
+  },
+  buttonContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonText: {
     color: "#ffffff",
     fontSize: 25,
-    // fontWeight: "bold",
+    marginRight: 5,
     textAlign: "center",
-    // alignItems: 'center'
   },
 });

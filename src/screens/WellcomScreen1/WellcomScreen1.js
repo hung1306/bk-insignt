@@ -22,7 +22,10 @@ export const WellcomeScreen1 = () => {
           style={styles.logo2}
         />
       </View>
-
+      <Text style={styles.intro}>
+        Điều gì làm cho trường Đại học Bách Khoa Thành Phố Hồ Chí Minh trở nên
+        đặc biệt? Tìm hiểu ngay với ứng dụng của chúng tôi!
+      </Text>
       {/* Nút Tiếp tục */}
       <TouchableOpacity
         style={styles.button}
@@ -45,7 +48,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#C0E4F8",
+    backgroundColor: "#30a8e8",
   },
   containerlogo: {
     display: "flex",
@@ -54,35 +57,51 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: 230,
+    height: 230,
     resizeMode: "contain",
     marginBottom: 20,
   },
   logo1: {
-    width: 50,
-    height: 50,
+    width: 70,
+    height: 70,
     resizeMode: "contain",
     marginBottom: 20,
     // backgroundColor: "#000",
   },
   logo2: {
-    width: 150,
-    height: 50,
+    width: 210,
+    height: 70,
     resizeMode: "contain",
     marginBottom: 20,
-    backgroundColor: "#fff",
+    // color: '#fff'
+    // backgroundColor: "#fff",
   },
   appName: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 20,
+    textTransform: "uppercase",
+    color: "#fff",
+  },
+  intro: {
+    width: 400,
+    fontSize: 19,
+    fontWeight: "bold",
+    textAlign: 'justify',
+    margin: 5,
+    color: "#fff",
   },
   button: {
+    marginTop: 20,
     backgroundColor: "#3C637F",
-    width: 220,
-    height: 55,
-    borderRadius: 10,
+    width: 200,
+    height: 60,
+    borderRadius: 15,
+    padding: 10,
+    alignItems: 'center',
+    borderWidth: 3, 
+    borderColor: 'white',
   },
   buttonText: {
     color: "#ffffff",

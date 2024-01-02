@@ -32,32 +32,6 @@ const CalendarScreen3 = () => {
             của ngành y tế. Tổ chức test kháng nguyên nhanh mẫu gộp cho toàn bộ học sinh của lớp đó. Cho học sinh di chuyển sang lớp học dự phòng và khử khuẩn toàn bộ lớp học. </Text>
             <Text style={[styles.TH]}>Nguồn: Suckhoedoisong.vn</Text>
 
-            {/* <View style={styles.container1}>
-                <Pressable onPress={() => navigation.navigate('Home')}>
-                    <Image
-                        source={require("../../../assets/Home/vector1.png")}
-                        style={styles.iconno1}
-                    />
-                </Pressable>
-                <Pressable onPress={() => { }}>
-                    <Image
-                        source={require("../../../assets/Home/vector2.png")}
-                        style={styles.iconno2}
-                    />
-                </Pressable>
-                <Pressable onPress={() => { }}>
-                    <Image
-                        source={require("../../../assets/Home/vector3.png")}
-                        style={styles.iconno3}
-                    />
-                </Pressable>
-                <Pressable onPress={() => navigation.navigate('Profile')}>
-                    <Image
-                        source={require("../../../assets/Home/union1.png")}
-                        style={styles.iconno3}
-                    />
-                </Pressable>
-            </View> */}
         </ScrollView>
   );
 };
@@ -65,15 +39,15 @@ const CalendarScreen3 = () => {
 const styles = StyleSheet.create({
     T:{
         flexDirection: 'row',
-        height: 70,
-        backgroundColor: '#87cbf0'
-        
+        height: 60,
+        backgroundColor: '#87cbf0',
+        marginTop: 15,
     },
     muiten:{
         top: 17,
         left: 10,
-        width: 38,
-        height: 38,
+        width: 35,
+        height: 35,
     },
     TD:{
         fontSize:26,

@@ -84,9 +84,11 @@ const styles = StyleSheet.create({
   calendar: {
     borderWidth: 1,
     borderColor: "#e4e9f2",
-    borderRadius: 40,
-    margin: 'auto',
-    marginTop: 10,
+    borderRadius: 30,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 30,
+    width: '95%',
     backgroundColor: "#fff",
     margin: 'auto',
   },
@@ -183,12 +185,13 @@ const styles = StyleSheet.create({
   T: {
     flexDirection: "row",
     height: 65,
+    marginTop: 20,
   },
   muiten: {
     top: 20,
     left: 10,
-    width: 38,
-    height: 38,
+    width: 35,
+    height: 35,
   },
 });
 

@@ -146,7 +146,8 @@ const styles = StyleSheet.create({
     flex: 1,
     overflow: "hidden",
     width: "100%",
-    marginTop: 20,
+    // marginTop: 27,
+    // paddingTop: 15,
   },
   trangCh: {
     fontSize: 26,
@@ -168,7 +169,7 @@ const styles = StyleSheet.create({
   },
   vectorParent: {
     marginLeft: -197.5,
-    top: 13,
+    top: 19,
     justifyContent: "flex-end",
     paddingLeft: Padding.p_3xs,
     paddingRight: 5,
@@ -215,7 +216,7 @@ const styles = StyleSheet.create({
     display: "flex",
     fontWeight: "700",
     color: Color.colorBlack,
-    //fontFamily: //fontFamily.openSansRegular,
+    // fontFamily: //fontFamily.openSansRegular,
   },
   bkInSightLayout: {
     width: "100%",

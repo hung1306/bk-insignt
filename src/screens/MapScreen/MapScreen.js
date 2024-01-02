@@ -87,8 +87,9 @@ const styles = StyleSheet.create({
   backNavigation: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 15,
-    marginTop: 10,
+    padding: 14,
+    // marginTop: 17,
+    backgroundColor: "#87cbf0",
   },
   backIcon: {
     margin: 8,
@@ -103,5 +104,6 @@ const styles = StyleSheet.create({
   backText: {
     fontSize: 25,
     fontWeight: "bold",
+    marginLeft: 10,
   },
 });
