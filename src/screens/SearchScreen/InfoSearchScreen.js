@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text, Image, Pressable, ScrollView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import { BottomNavigation } from "@ui-kitten/components";
 
 export const InfoSearchScreen = () => {
     const navigation = useNavigation();
@@ -150,13 +151,13 @@ export const InfoSearchScreen = () => {
                         style={styles.iconno1}
                     />
                 </Pressable>
-                <Pressable onPress={() => { }}>
+                <Pressable onPress={() => navigation.navigate("Calendar")}>
                     <Image
                         source={require("../../../assets/Home/vector2.png")}
                         style={styles.iconno2}
                     />
                 </Pressable>
-                <Pressable onPress={() => { }}>
+                <Pressable onPress={() => navigation.navigate("Map")}>
                     <Image
                         source={require("../../../assets/Home/vector3.png")}
                         style={styles.iconno3}
@@ -169,6 +170,7 @@ export const InfoSearchScreen = () => {
                     />
                 </Pressable>
             </View>
+            {/* <BottomNavigation /> */}
         </View>
     )
 }
@@ -177,6 +179,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 10,
+    // marginTop: 20,
   },
   column: {
     flex: 1,
@@ -193,13 +196,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         //justifyContent: 'center',
-        paddingTop: 10,
+        marginTop: 30,
         paddingLeft: 10,
+        marginTop:20,
         //padding: 10,
     },
     backIcon: {
-        width: 40,
-        height: 40,
+        width: 35,
+        height: 35,
         marginRight: 20,
     },
     headerText: {

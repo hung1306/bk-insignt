@@ -150,13 +150,13 @@ export const InfoSearchScreen2 = () => {
                         style={styles.iconno1}
                     />
                 </Pressable>
-                <Pressable onPress={() => { }}>
+                <Pressable onPress={() => navigation.navigate("Calendar")}>
                     <Image
                         source={require("../../../assets/Home/vector2.png")}
                         style={styles.iconno2}
                     />
                 </Pressable>
-                <Pressable onPress={() => { }}>
+                <Pressable onPress={() => navigation.navigate("Map")}>
                     <Image
                         source={require("../../../assets/Home/vector3.png")}
                         style={styles.iconno3}
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
         //justifyContent: 'center',
         paddingTop: 10,
         paddingLeft: 10,
-        //padding: 10,
+        marginTop: 20,
     },
     backIcon: {
         width: 40,
