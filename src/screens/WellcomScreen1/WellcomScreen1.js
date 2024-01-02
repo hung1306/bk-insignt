@@ -2,41 +2,40 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 
-export const WellcomeScreen = () => {
+export const WellcomeScreen1 = () => {
   const navigation = useNavigation();
-  const handleContinue = () => {
-    navigation.navigate("Wellcome1");
-  };
-
   return (
     <View style={styles.container}>
       {/* Hình ảnh logo */}
-      <View>
+      <Image
+        source={require("../../../assets/hcmut.png")}
+        style={styles.logo}
+      />
+
+      <View style={styles.containerlogo}>
         <Image
-          source={require("../../../assets/hcmut.png")}
-          style={styles.logo}
+          source={require("../../../assets/Vector.png")}
+          style={styles.logo1}
+        />
+        <Image
+          source={require("../../../assets/BKInsight.png")}
+          style={styles.logo2}
         />
       </View>
-      {/* Tên ứng dụng */}
-      <View>
-        <Text style={styles.appName}>Chào mừng đến với</Text>
-        <View style={styles.containerlogo}>
-          <Image
-            source={require("../../../assets/Vector.png")}
-            style={styles.logo1}
-          />
-          <Image
-            source={require("../../../assets/BKInsight.png")}
-            style={styles.logo2}
-          />
-        </View>
-      </View>
+
       {/* Nút Tiếp tục */}
-      <View>
-        <TouchableOpacity style={styles.button} onPress={handleContinue}>
-          <Text style={styles.buttonText}>Tiếp tục</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Login")}
+      >
+        <Text style={styles.buttonText}>Đăng nhập</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("SignUp")}
+      >
+        <Text style={styles.buttonText}>Đăng Ký</Text>
+      </TouchableOpacity>
     </View>
   );
 };
